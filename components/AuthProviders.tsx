@@ -21,14 +21,20 @@ const AuthProviders = () => {
   useEffect(() => {
     const fetchProviders = async () => {
      const res = await getProviders();
+
+     console.log('res is', res);
+
      setProviders(res);
-     console.log('resis', res);
+
     }
 
     fetchProviders()
   }, []);
 
   if(providers) {
+
+    console.log('providers are', providers);
+
     return (
       <div>
         {Object.values(providers).map
