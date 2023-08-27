@@ -5,6 +5,9 @@ const nextConfig = {
       "lh3.googleusercontent.com"
     ]
   },
+  experimental: {
+    serverComponentsExternalPackages: ['cloudinary', 'graphql-request']
+  }
 }
 
 module.exports = nextConfig
