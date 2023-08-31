@@ -1,5 +1,5 @@
 import { ProjectForm } from "@/common.types";
-import { allProject, createProjectMutation, createUserMutation, getProjectByIdQuery, getUserQuery, projectsQuery } from "@/graphql";
+import { allProject, createProjectMutation, createUserMutation, getProjectByIdQuery, getProjectsOfUserQuery, getUserQuery, projectsQuery } from "@/graphql";
 import { create } from "domain";
 import { GraphQLClient } from "graphql-request";
 
