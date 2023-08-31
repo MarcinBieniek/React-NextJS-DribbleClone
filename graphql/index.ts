@@ -142,3 +142,35 @@ export const getProjectsOfUserQuery = `
     }
   }
 `;
+
+// new feature added after category error
+
+export const allProject = `
+  query getAllProjects($endcursor: String) {
+    projectSearch(first: 8, after: $endcursor) {
+      pageInfo {
+        hasNextPage
+        hasPreviousPage
+        startCursor
+        endCursor
+      }
+      edges {
+        node {
+          title
+          githubUrl
+          description
+          liveSiteUrl
+          id
+          image
+          category
+          createdBy {
+            id
+            email
+            name
+            avatarUrl
+          }
+        }
+      }
+    }
+  }
+`
