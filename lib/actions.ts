@@ -1,5 +1,5 @@
 import { ProjectForm } from "@/common.types";
-import { allProject, createProjectMutation, createUserMutation, getUserQuery, projectsQuery } from "@/graphql";
+import { allProject, createProjectMutation, createUserMutation, getProjectByIdQuery, getUserQuery, projectsQuery } from "@/graphql";
 import { create } from "domain";
 import { GraphQLClient } from "graphql-request";
 
@@ -87,4 +87,9 @@ export const fetchAllProjects = (category?: string, endcursor?: string) => {
   client.setHeader("x-api-key", apiKey);
   if (!category) return makeGraphQLRequest(allProject, { endcursor });
   else return makeGraphQLRequest(projectsQuery, { category, endcursor });
+}
+
+export const getProjectDetails = (id: string) => {
+  client.setHeader('x-api-key', apiKey);
+  return makeGraphQLRequest(getProjectByIdQuery, { id })
 }
