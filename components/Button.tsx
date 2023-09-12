@@ -26,7 +26,7 @@ const Button = ({ title, leftIcon, rightIcon, handleClick, isSubmitting, type, b
     >
       {leftIcon && <Image src={leftIcon} width={14} height={14} alt="left" />}
       {title}
-      {rightIcon && <Image src={rightIcon} width={14} height={14} alt="left" />}
+      {rightIcon && <Image src={rightIcon}  width={14} height={14} alt="left" />}
     </button>
   )
 }
